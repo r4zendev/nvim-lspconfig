@@ -31,6 +31,6 @@ return {
     local root_files = { 'biome.json', 'biome.jsonc' }
     root_files = util.insert_package_json(root_files, 'biome', fname)
     local root_dir = vim.fs.dirname(vim.fs.find(root_files, { path = fname, upward = true })[1])
-    on_dir(root_dir)
+    return root_dir and on_dir(root_dir)
   end,
 }
